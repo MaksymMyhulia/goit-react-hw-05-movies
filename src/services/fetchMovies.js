@@ -17,3 +17,7 @@ export async function fetchCastMovie(movieId) {
     const responce = await axios.get(`movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`);
     return responce.data.cast;
 }
+export async function fetchReviewMovie(movieId) {
+    const responce = await axios.get(`movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`);
+    return responce.data.results;
+}
