@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 
 const LinkBack = styled(Link)`
   color: black;
@@ -16,4 +15,17 @@ export const Container = styled.div`
   display: flex;
   gap: 20px;
   font-size: 24px;
+`;
+
+export const ListSubInfo = styled.ul`
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+`;
+export const ContainerSub = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
 `;

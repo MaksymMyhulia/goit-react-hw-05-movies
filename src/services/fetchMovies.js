@@ -21,3 +21,9 @@ export async function fetchReviewMovie(movieId) {
     const responce = await axios.get(`movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`);
     return responce.data.results;
 }
+export async function fetchDetailsMovie(movieId) {
+    const responce = await axios.get(
+      `movie/${movieId}?api_key=${API_KEY}&language=en-US&external_source=imdb_id`
+    );
+    return responce.data;
+}

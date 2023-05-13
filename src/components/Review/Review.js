@@ -1,4 +1,5 @@
-import { useEffect, useEffect, useParams } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { fetchReviewMovie } from "services/fetchMovies";
 import { Loader } from "components/Loader/Loader";
 import { ListReview } from "./Review.styled";

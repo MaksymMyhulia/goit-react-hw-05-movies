@@ -1,4 +1,4 @@
-import { StyledLink } from "./Layout.styled";
+import StyledLink  from "./Layout.styled";
 import { Header, Nav, Section } from "./Layout.styled";
 import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
