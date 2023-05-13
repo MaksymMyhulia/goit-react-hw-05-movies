@@ -13,3 +13,7 @@ export async function fetchQueryMovies(query) {
     );
     return responce.data.results;
 }  
+export async function fetchCastMovie(movieId) {
+    const responce = await axios.get(`movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`);
+    return responce.data.cast;
+}
