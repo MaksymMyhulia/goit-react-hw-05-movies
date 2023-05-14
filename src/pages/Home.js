@@ -9,8 +9,8 @@ const [movies, setMovies] = useState(null);
 const [status, setStatus] = useState('idle');
 
 useEffect(() => {
-    getMovies();
-}, [])
+  getMovies();
+}, []);
 
 
 async function getMovies() {
