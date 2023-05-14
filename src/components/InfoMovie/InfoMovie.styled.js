@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 
 
 const LinkBack = styled(Link)`
-  color: black;
-  font-size: 20px;
   text-decoration: none;
   padding: 10px;
-  border: 1px dashed orange;
-  color: black;
+  border-radius: ${({theme}) => theme.space[3]}px;
+  border: none;
+  box-shadow: ${({theme}) => theme.shadows.normal};
+  color: ${({theme}) => theme.colors.text};
+  background-color: ${({theme}) => theme.colors.backgroundColor};
+  font-size: ${({theme}) => theme.fontSizes.m};
+  &.active {
+    color: orange;
+  }
 `;
 export default LinkBack;
 

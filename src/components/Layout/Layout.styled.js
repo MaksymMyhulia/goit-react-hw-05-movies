@@ -3,10 +3,15 @@ import { NavLink } from "react-router-dom";
 
 const StyledLink = styled(NavLink)`
   color: black;
-  font-size: 22px;
   text-decoration: none;
   padding: 10px;
-  border: 1px dashed orange;
+  border-radius: ${({theme}) => theme.space[3]}px;
+  border: none;
+  box-shadow: ${({theme}) => theme.shadows.normal};
+  color: ${({theme}) => theme.colors.text};
+  background-color: ${({theme}) => theme.colors.backgroundColor};
+
+  font-size: ${({theme}) => theme.fontSizes.m};
   &.active {
     color: orange;
   }

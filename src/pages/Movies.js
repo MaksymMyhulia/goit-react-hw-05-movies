@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { fetchQueryMovies } from "services/fetchMovies";
-import { Input, Button } from "../components/Movies/Movies.styled";
+import { Form, Input, Button } from "../components/Movies/Movies.styled";
 import { MoviesList } from "components/MoviesList/MoviesList";
+import { Loader } from "../components/Loader/Loader";
 
 const Movies = () => {
   const [movies, setMovies] = useState(null);
@@ -35,10 +36,16 @@ const Movies = () => {
     }
   }
   return (
-    <form onSubmit={onSubmit}>
-      <Input type="text" name="query" placeholder="Search..." />
-      <Button type="submit">Submit</Button>
-    </form>
+  <>    
+  <Form onSubmit={onSubmit}>
+    <Input type="text" name="query" placeholder="Search..." />
+    <Button type="submit">Submit</Button>
+  </Form>
+   {status === 'responded' && <MoviesList movies={movies} />}
+   {status === 'pending' && <Loader />}
+   {status === 'rejected' && <h2>Sorry we didn't find this page</h2>}
+  </>
+  
   )
 }
 
