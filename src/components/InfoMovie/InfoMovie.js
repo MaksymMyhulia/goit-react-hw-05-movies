@@ -10,7 +10,7 @@ export const InfoMovie = ({ title, genres, poster_path, release_date, vote_avera
     const backLinkRef = useRef(location.state?.from ?? '/');
     return (
       <Container>
-        <LinkBack to={backLinkRef.current}>{`<== Back`}</LinkBack>
+        <LinkBack to={backLinkRef.current}>{`Back`}</LinkBack>
         <img src={poster_path && `https://image.tmdb.org/t/p/w400${poster_path}`} alt={title} />
         <div>
           <h1>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom"; 
-import  PropTypes  from "prop-types";
+import PropTypes from "prop-types";
 
 
 export const MoviesList = ({ movies }) => {
@@ -18,6 +18,6 @@ export const MoviesList = ({ movies }) => {
     );
   };
 
-MoviesList.protoType = {
+MoviesList.propTypes = {
     movies: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
 }

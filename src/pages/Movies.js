@@ -11,11 +11,11 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams({});
 
   useEffect(() => {
-    const search = searchParams.get("query")
-    if(search) {
-       getQueryMovies();
+    const query = searchParams.get("query");
+    if (query) {
+      getQueryMovies(query);
     }
-  }, [searchParams])
+  }, [searchParams]);
 
   function onSubmit(event) {
     event.preventDefault();

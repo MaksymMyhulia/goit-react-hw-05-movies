@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchTrendMovies } from "services/fetchMovies";
-import { MoviesList } from "components/MoviesList/MoviesList";
+import { MoviesList } from "../components/MoviesList/MoviesList"
 import { Loader } from "../components/Loader/Loader";
 
 
@@ -10,7 +10,7 @@ const [status, setStatus] = useState('idle');
 
 useEffect(() => {
   getTrendMovies();
-});
+}, []);
 
 
 async function getTrendMovies() {
@@ -22,16 +22,16 @@ async function getTrendMovies() {
     } catch {
       setStatus('rejected');
     }
+  }
 
 return (
     <>
      <h1>Movies are trending today</h1>
-      {status === 'responded' && <MoviesList movies={movies} />}
       {status === 'pending' && <Loader />}
+      {status === 'responded' && <MoviesList movies={movies} />}
       {status === 'rejected' && <h2>Sorry we didn't find this page</h2>}
     </>
-)    
-  }
+   );    
 }  
 
 export default Home;
